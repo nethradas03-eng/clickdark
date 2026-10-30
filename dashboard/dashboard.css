@@ -1221,3 +1221,27 @@ body {
   .report-details-grid { grid-template-columns: 1fr; }
   .url-input-group { flex-direction: column; }
 }
+
+
+/* Typography, control consistency and small-screen safeguards */
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--accent-cyan); outline-offset: 3px; }
+img { max-width: 100%; }
+@media (max-width: 640px) {
+  .sidebar { width: 58px; }
+  .content-stage { margin-left: 58px; padding: 16px; }
+  .top-nav { gap: 12px; align-items: flex-start; flex-wrap: wrap; }
+  .top-right { width: 100%; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .sample-pills-grid { grid-template-columns: 1fr; }
+  .card { padding: 16px; }
+  .report-header-card { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .edu-grid { grid-template-columns: 1fr; }
+}
