@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="ClickTrap helps people recognize potentially deceptive website interface patterns through explainable, rule-based analysis.">
+  <title>ClickTrap — See the patterns. Keep control.</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b1020;--panel:#121a2e;--panel2:#17223a;--line:#263653;--text:#edf3ff;--muted:#a8b6ce;--mint:#61e6c2;--blue:#80a9ff;--warning:#ffbf69}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 78% 0%,#1c3152 0,transparent 36%),var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{height:76px;border-bottom:1px solid #ffffff14;display:flex;align-items:center}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}.mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--mint),#7aa8ff);display:grid;place-items:center;color:#071522;font-size:20px}
+    .navlinks{display:flex;gap:24px;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--mint)}
+    .hero{padding:92px 0 74px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}.eyebrow{display:inline-flex;gap:9px;align-items:center;padding:7px 12px;border:1px solid #61e6c255;border-radius:999px;color:var(--mint);font-size:12px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase}
+    h1{font-size:clamp(42px,6vw,68px);line-height:1.05;letter-spacing:-2.8px;margin:22px 0}.gradient{background:linear-gradient(90deg,var(--mint),#91b8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{max-width:650px;color:var(--muted);font-size:18px}.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;padding:13px 19px;border-radius:12px;font-weight:800;font-size:14px;border:1px solid var(--line);transition:.2s}.primary{background:var(--mint);color:#071522;border-color:var(--mint)}.secondary{background:#ffffff08}.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    .visual{background:linear-gradient(145deg,#1b2943,#10182b);border:1px solid #344665;border-radius:24px;padding:22px;box-shadow:0 30px 80px #0005}.visual-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-bottom:18px}.scan-card{background:#0c1426;border:1px solid #2d405f;border-radius:16px;padding:18px;margin:12px 0}.scan-row{display:flex;justify-content:space-between;gap:12px;align-items:center}.pill{font-size:11px;padding:4px 8px;border-radius:99px;background:#ffbf6922;color:var(--warning);font-weight:800}.bar{height:7px;background:#263653;border-radius:10px;margin-top:13px;overflow:hidden}.bar span{display:block;width:68%;height:100%;background:linear-gradient(90deg,var(--mint),var(--warning));border-radius:10px}.small{font-size:12px;color:var(--muted)}
+    section{padding:66px 0}.section-head{max-width:680px;margin-bottom:28px}h2{font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-1px;margin:0 0 12px}.section-head p,.muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature,.step{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:18px}.icon{font-size:25px;margin-bottom:12px}.feature h3,.step h3{margin:0 0 8px;font-size:17px}.feature p,.step p{color:var(--muted);font-size:14px;margin:0}
+    .how{background:linear-gradient(180deg,transparent,#111a2d 40%,transparent)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.number{font-size:12px;color:var(--mint);font-weight:900;letter-spacing:1px;margin-bottom:12px}
+    .notice{padding:18px 20px;border:1px solid #ffbf6944;background:#ffbf690d;border-radius:14px;color:#f5d8ad;font-size:14px;margin-top:24px}
+    .cta{padding:34px;border-radius:22px;border:1px solid #61e6c255;background:linear-gradient(120deg,#142d38,#172440);display:flex;align-items:center;justify-content:space-between;gap:24px}.cta p{color:var(--muted);margin:6px 0 0}
+    footer{border-top:1px solid #ffffff14;padding:26px 0;color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:64px}.visual{max-width:560px}.grid,.steps{grid-template-columns:1fr 1fr}.navlinks{gap:12px}}@media(max-width:560px){.wrap{width:min(100% - 28px,1120px)}.navlinks a:not(:last-child){display:none}.hero{padding:54px 0}.grid,.steps{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column}h1{letter-spacing:-1.8px}}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="./"><span class="mark">⌁</span><span>ClickTrap</span></a>
+  <nav class="navlinks" aria-label="Main navigation"><a href="#features">Features</a><a href="#how-it-works">How it works</a><a href="test-pages/index.html">Try demo</a></nav>
+  <a class="btn secondary" href="dashboard/index.html">Open dashboard ↗</a>
+</div></header>
+<main>
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow">◈ Browser-based dark pattern detector</span>
+      <h1>See the patterns.<br><span class="gradient">Keep control.</span></h1>
+      <p class="lead">ClickTrap helps you spot interface designs that may pressure, confuse, or steer you into choices you did not intend to make. Understand the warning before you click.</p>
+      <div class="actions"><a class="btn primary" href="dashboard/index.html">Explore ClickTrap dashboard <span>→</span></a><a class="btn secondary" href="test-pages/index.html">Try sample webpages</a></div>
+      <p class="small" style="margin-top:18px">A student Git Discipline Project · HTML · CSS · JavaScript · Chrome Extension APIs</p>
+    </div>
+    <div class="visual" aria-label="Illustrative ClickTrap scan report">
+      <div class="visual-top"><span>CLICKTRAP / SCAN PREVIEW</span><span>● LOCAL ANALYSIS</span></div>
+      <div class="scan-card"><div class="scan-row"><strong>Page inspection</strong><span class="pill">Review suggested</span></div><p class="small">Example storefront · Sample result</p><div class="bar"><span></span></div><div class="scan-row small" style="margin-top:9px"><span>Potential risk signals</span><strong>3 found</strong></div></div>
+      <div class="scan-card"><div class="scan-row"><strong>⚠️ Confusing consent choice</strong><span class="pill">Medium</span></div><p class="small">The reject option appears less prominent than the accept option.</p></div>
+      <div class="scan-card"><div class="scan-row"><strong>⚠️ Urgency language</strong><span class="pill">Review</span></div><p class="small">A time-pressure phrase was found in the sample page.</p></div>
+      <p class="small">Illustrative interface only — not a live website scan.</p>
+    </div>
+  </div>
+  <section id="features"><div class="wrap">
+    <div class="section-head"><h2>Understand what a website is asking you to do.</h2><p>ClickTrap checks webpage text and interface characteristics for signals associated with common deceptive design patterns.</p></div>
+    <div class="grid">
+      <article class="feature"><div class="icon">🧭</div><h3>Misleading button labels</h3><p>Highlight wording that may make an action unclear or steer users toward an unintended choice.</p></article>
+      <article class="feature"><div class="icon">🍪</div><h3>Confusing consent options</h3><p>Review cookie prompts where accepting and rejecting options may be presented unequally.</p></article>
+      <article class="feature"><div class="icon">⏳</div><h3>Fake urgency & scarcity</h3><p>Flag phrases and interface signals that create pressure through countdowns or limited-stock claims.</p></article>
+      <article class="feature"><div class="icon">💳</div><h3>Hidden costs</h3><p>Look for fee disclosures and preselected paid add-ons that deserve a closer review.</p></article>
+      <article class="feature"><div class="icon">🪤</div><h3>Forced actions</h3><p>Identify language that may push users to share details or take actions before proceeding.</p></article>
+      <article class="feature"><div class="icon">↩️</div><h3>Obstructive cancellation</h3><p>Flag wording that suggests cancellation may involve extra steps or unnecessary barriers.</p></article>
+    </div>
+  </div></section>
+  <section class="how" id="how-it-works"><div class="wrap">
+    <div class="section-head"><h2>How ClickTrap works</h2><p>A transparent, rule-based workflow that turns suspicious interface signals into understandable explanations.</p></div>
+    <div class="steps">
+      <article class="step"><div class="number">01 / INSPECT</div><h3>Choose a webpage</h3><p>Use the browser extension on a webpage, try one of the included sample pages, or paste HTML into the dashboard.</p></article>
+      <article class="step"><div class="number">02 / ANALYSE</div><h3>Apply detection rules</h3><p>JavaScript checks selected text, controls, and DOM characteristics against predefined patterns and heuristics.</p></article>
+      <article class="step"><div class="number">03 / UNDERSTAND</div><h3>Review the explanation</h3><p>See the flagged evidence, why it was highlighted, and a practical action to consider before continuing.</p></article>
+    </div>
+    <div class="notice"><strong>Important:</strong> A ClickTrap warning is an informational signal, not proof that a website is fraudulent or legally non-compliant. Rule-based detection can produce false positives and may miss patterns.</div>
+  </div></section>
+  <section><div class="wrap"><div class="cta"><div><h2>Explore the ClickTrap demo</h2><p>Open the dashboard to review sample scans, reports, history, and the dark-pattern learning guide.</p></div><a class="btn primary" href="dashboard/index.html">Launch dashboard →</a></div></div></section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 ClickTrap · Student project</span><span><a href="https://github.com/nethradas03-eng/clickdark">GitHub repository</a> · <a href="test-pages/index.html">Test pages</a></span></div></footer>
+</body>
+</html>
