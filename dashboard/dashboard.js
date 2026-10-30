@@ -262,18 +262,11 @@ document.addEventListener('DOMContentLoaded', async () => {
           return;
         }
       } catch (corsErr) {
-        // Attempt fetch via free public CORS proxy for live demonstration
-        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`;
-        const proxyResp = await fetch(proxyUrl, { signal: AbortSignal.timeout(10000) });
-        if (proxyResp.ok) {
-          const html = await proxyResp.text();
-          scanHtmlLocally(html, targetUrl);
-          setScanLoading(false);
-          return;
-        }
+        // Cross-origin websites commonly block browser fetch requests.
+        // Do not send page URLs or HTML to an untrusted public CORS proxy.
       }
 
-      throw new Error('Browser blocked cross-origin access. Start the local server by running `npm start` in your terminal to scan any live URL, or use our pre-built test pages below!');
+      throw new Error('This website blocks direct browser access (CORS). For a live URL scan, run the local scanner with `npm start` and open http://localhost:3000. You can also use the sample pages or paste HTML below.');
 
     } catch (err) {
       console.error('[ClickTrap Scanner Error]', err);
